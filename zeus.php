@@ -11,20 +11,18 @@ class ZEUS {
   	}
   }
   private function loadURL($targetURL) {
-  	$source = file_get_html($targetURL);
+  	$source = fopen($targetURL, 'r');
   }
 
   public function userAgenSelector($userAgentFlag) {
     if ($userAgentFlag == 'android') {
-      return $android;
+      ini_set('user_agent', $android);
     } else {
-      return $windowsphone;
+      ini_set('user_agent', $windowsphone);
     }
     //UserAgents
   	$android = 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19';
   	$windowsphone  = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0; NOKIA; Lumia 800)';
-
-  	ini_set('user_agent', $android);
   }
 
   public function chiefManager($a, $b, $c) {
