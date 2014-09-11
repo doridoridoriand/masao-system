@@ -6,7 +6,8 @@ class ZEUS {
   	for ($i = 0; $i < $accessrepeats; $i++) {
   		  	$this->loadURL($targetURL);
   		  	sleep($interval);
-  		  	print_r($i);
+          print_r($i);
+          print_r(',');
   	}
   }
   private function loadURL($targetURL) {
